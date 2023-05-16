@@ -1,0 +1,226 @@
+<!doctype html>
+<html lang="cs">
+<head>
+    <link rel="stylesheet" href="style.css">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Meteostanice by Miikue</title>
+</head>
+
+<body onload="refresh(60000);">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+
+<script>
+    function refresh(time){setTimeout("location.reload(true);",time);}
+</script>
+
+<div id="palice">
+    <div id="bac">
+        <canvas id="venku" style="width:100%;max-width:700px"></canvas>
+    </div>
+    <div id="bum">
+        <canvas id="doma" style="width:100%;max-width:700px"></canvas>
+    </div>
+    <div>
+        <canvas id="volt"></canvas>
+    </div>
+    <div id="destovec">
+        <canvas id="destvzduch"></canvas>
+    </div>
+</div>
+
+<script>
+    chartIt()
+//////////////////////////////////venku
+    const datumyvenku = [];
+    const tepotavenku = [];
+    const vlhkostvenku = [];
+
+    async function chartIt(){
+        await getData();
+        const ctx = document.getElementById('venku');
+        new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: datumyvenku,
+                datasets: [{
+                    label: 'teplota',
+                    data: tepotavenku,
+                    borderColor: "red",
+                    borderWidth: 1
+                },{
+                    label: 'vlhkost',
+                    data: vlhkostvenku,
+                    borderColor: "blue",
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                title: {
+                    display: true,
+                    text: "Venku"
+                },
+            }
+        });
+    }
+
+    async function getData() {
+        const xs = [];
+        const ys = [];
+        const response = await fetch('dataVenku.csv');
+        const data = await response.text();
+        //console.log(data);
+        const table = data.split(/\n/).slice(1);
+        table.forEach(row => {
+            const columns = row.split(',');
+            const time = columns[0];
+            datumyvenku.push(time);
+            xs.push(time);
+            const temp = columns[1];
+            tepotavenku.push(temp);
+            const vlh = columns[2];
+            vlhkostvenku.push(vlh);
+            ys.push(parseFloat(temp) + 14);
+            const firstFruits = [];
+            for (let i = 0; i < vlhkostvenku.length; i = i+1) {
+            firstFruits.push(vlhkostvenku[i]);
+        }
+        for (let j = 0; j < tepotavenku.length; j = j+1) {
+            firstFruits.push(tepotavenku[j]);
+        }
+        for (let l = 0; l < datumyvenku.length; l = l+1) {
+            firstFruits.push(datumyvenku[l]);
+        }
+        })
+    }
+</script>
+<script>
+chartIt()
+///////////////////////////////////doma
+const datumydoma = [];
+let tepotadoma = [];
+const vlhkostdoma = [];
+async function chartIt(){
+    await getData();
+    const ctx = document.getElementById('doma');
+new Chart(ctx, {
+    type: 'line',
+    data: {
+        labels: datumydoma,
+        datasets: [{
+            label: 'teplota',
+            data: tepotadoma,
+            borderColor: "red",
+            borderWidth: 1
+        },{
+            label: 'vlhkost',
+            data: vlhkostdoma,
+            borderColor: "blue",
+            borderWidth: 1
+        }]
+    },
+    options: {
+        title: {
+            display: true,
+            text: "Doma"
+        },
+    plugins: {},
+    }});
+}
+
+async function getData() {
+    const xs = [];
+    const ys = [];
+    const response = await fetch('dataDoma.csv');
+    const data = await response.text();
+    //console.log(data);
+    const table = data.split(/\n/).slice(1);
+    table.forEach(row => {
+    const columns = row.split(',');
+    const time = columns[0];
+    datumydoma.push(time);
+    xs.push(time);
+    const temp = columns[1];
+    tepotadoma.push(temp);
+    const vlh = columns[2];
+    vlhkostdoma.push(vlh);
+    ys.push(parseFloat(temp) + 14);
+
+const firstFruits = [];
+    for (let i = 0; i < vlhkostdoma.length; i = i+1) {
+        firstFruits.push(vlhkostdoma[i]);
+    }
+for (let j = 0; j < tepotadoma.length; j = j+1) {
+firstFruits.push(tepotadoma[j]);
+}
+for (let l = 0; l < datumydoma.length; l = l+1) {
+firstFruits.push(datumydoma[l]);
+}
+})
+}
+</script>
+
+<script>
+    chartIt()
+    //////////////////////////////////dest volt
+    const datumyvenku = [];
+    const tepotavenku = [];
+    const vlhkostvenku = [];
+    const destvenku = [];
+    const vzduchdoma = [];
+
+    async function chartIt(){
+        await getData();
+        const ctx = document.getElementById('destvzduch');
+        new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: datumyvenku,
+                datasets: [{
+                    label: 'dest',
+                    data: destvenku,
+                    borderColor: "blue",
+                    borderWidth: 1
+                },{
+                    label: 'vzduch',
+                    data: vzduchdoma,
+                    borderColor: "red",
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                title: {
+                    display: true,
+                    text: "vzduch - dest"
+                },
+            }
+        });
+    }
+
+    async function getData() {
+        const xs = [];
+        const ys = [];
+        const response = await fetch('dataVenku.csv');
+        const data = await response.text();
+        //console.log(data);
+        const table = data.split(/\n/).slice(1);
+        table.forEach(row => {
+            const columns = row.split(',');
+            const time = columns[0];
+            datumyvenku.push(time);
+            xs.push(time);
+            const temp = columns[1];
+            tepotavenku.push(temp);
+            const vlh = columns[2];
+            vlhkostvenku.push(vlh);
+            const dest = columns[4];
+            destvenku.push(dest);
+            ys.push(parseFloat(temp) + 14);
+
+        })
+    }
+</script>
+
+
+</body>
+</html>

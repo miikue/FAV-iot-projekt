@@ -1,0 +1,268 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`default export should have ASAP function 1`] = `
+Array [
+  Object {
+    "x": 1.5,
+    "y": 1.75,
+  },
+  Object {
+    "x": 5.5,
+    "y": 12.5,
+  },
+]
+`;
+
+exports[`default export should have LTD function 1`] = `
+Array [
+  Array [
+    0,
+    1,
+  ],
+  Array [
+    1,
+    2,
+  ],
+]
+`;
+
+exports[`default export should have LTOB function 1`] = `
+Array [
+  Array [
+    0,
+    1,
+  ],
+  Array [
+    7,
+    20,
+  ],
+]
+`;
+
+exports[`default export should have LTTB function 1`] = `
+Array [
+  Array [
+    0,
+    1,
+  ],
+  Array [
+    1,
+    2,
+  ],
+]
+`;
+
+exports[`default export should have SMA function 1`] = `
+Array [
+  Object {
+    "x": 0,
+    "y": 1,
+  },
+  Object {
+    "x": 1,
+    "y": 2,
+  },
+  Object {
+    "x": 2,
+    "y": 3,
+  },
+  Object {
+    "x": 3,
+    "y": 1,
+  },
+  Object {
+    "x": 4,
+    "y": 5,
+  },
+  Object {
+    "x": 5,
+    "y": 10,
+  },
+  Object {
+    "x": 6,
+    "y": 15,
+  },
+  Object {
+    "x": 7,
+    "y": 20,
+  },
+]
+`;
+
+exports[`direct imports should have ASAP function 1`] = `
+Array [
+  Object {
+    "x": 1.5,
+    "y": 1.75,
+  },
+  Object {
+    "x": 5.5,
+    "y": 12.5,
+  },
+]
+`;
+
+exports[`direct imports should have LTD function 1`] = `
+Array [
+  Array [
+    0,
+    1,
+  ],
+  Array [
+    1,
+    2,
+  ],
+]
+`;
+
+exports[`direct imports should have LTOB function 1`] = `
+Array [
+  Array [
+    0,
+    1,
+  ],
+  Array [
+    7,
+    20,
+  ],
+]
+`;
+
+exports[`direct imports should have LTTB function 1`] = `
+Array [
+  Array [
+    0,
+    1,
+  ],
+  Array [
+    1,
+    2,
+  ],
+]
+`;
+
+exports[`direct imports should have SMA function 1`] = `
+Array [
+  Object {
+    "x": 0,
+    "y": 1,
+  },
+  Object {
+    "x": 1,
+    "y": 2,
+  },
+  Object {
+    "x": 2,
+    "y": 3,
+  },
+  Object {
+    "x": 3,
+    "y": 1,
+  },
+  Object {
+    "x": 4,
+    "y": 5,
+  },
+  Object {
+    "x": 5,
+    "y": 10,
+  },
+  Object {
+    "x": 6,
+    "y": 15,
+  },
+  Object {
+    "x": 7,
+    "y": 20,
+  },
+]
+`;
+
+exports[`imports from root should have ASAP function 1`] = `
+Array [
+  Object {
+    "x": 1.5,
+    "y": 1.75,
+  },
+  Object {
+    "x": 5.5,
+    "y": 12.5,
+  },
+]
+`;
+
+exports[`imports from root should have LTD function 1`] = `
+Array [
+  Array [
+    0,
+    1,
+  ],
+  Array [
+    1,
+    2,
+  ],
+]
+`;
+
+exports[`imports from root should have LTOB function 1`] = `
+Array [
+  Array [
+    0,
+    1,
+  ],
+  Array [
+    7,
+    20,
+  ],
+]
+`;
+
+exports[`imports from root should have LTTB function 1`] = `
+Array [
+  Array [
+    0,
+    1,
+  ],
+  Array [
+    1,
+    2,
+  ],
+]
+`;
+
+exports[`imports from root should have SMA function 1`] = `
+Array [
+  Object {
+    "x": 0,
+    "y": 1,
+  },
+  Object {
+    "x": 1,
+    "y": 2,
+  },
+  Object {
+    "x": 2,
+    "y": 3,
+  },
+  Object {
+    "x": 3,
+    "y": 1,
+  },
+  Object {
+    "x": 4,
+    "y": 5,
+  },
+  Object {
+    "x": 5,
+    "y": 10,
+  },
+  Object {
+    "x": 6,
+    "y": 15,
+  },
+  Object {
+    "x": 7,
+    "y": 20,
+  },
+]
+`;
