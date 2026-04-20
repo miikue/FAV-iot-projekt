@@ -1,0 +1,12 @@
+# Arduino knihovny -- instaluj přes Arduino IDE: Tools > Manage Libraries
+#
+# Název v Library Manageru          Verze (ověřená)
+ArduinoMqttClient                  # >= 0.1.7  (Arduino)
+DHT sensor library                 # >= 1.4.4  (Adafruit)
+Adafruit Unified Sensor            # >= 1.1.9  (Adafruit) -- závislost DHT
+#
+# WiFi knihovna závisí na desce:
+#   MKR WiFi 1010 / Nano 33 IoT  ->  WiFiNINA
+#   MKR 1000                     ->  WiFi101
+#   ESP8266                      ->  ESP8266WiFi  (součást board package)
+#   ESP32                        ->  WiFi         (součást board package)

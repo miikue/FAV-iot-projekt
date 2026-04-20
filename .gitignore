@@ -1,0 +1,10 @@
+# WiFi credentials — never commit
+arduino_secrets.h
+
+# IDE
+.idea/
+*.iml
+
+# Python
+__pycache__/
+*.pyc
